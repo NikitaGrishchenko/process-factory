@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django import forms
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import Group, PermissionsMixin, UserManager
@@ -68,3 +69,27 @@ class User(AbstractBaseUser, PermissionsMixin):
     def clean(self):
         super().clean()
         self.email = self.__class__.objects.normalize_email(self.email)
+
+
+
+class Employee(models.Model):
+    """
+    Сотрудники
+    """
+    first_name = models.CharField(_("Имя"), max_length=30)
+    last_name = models.CharField(_("Фамилия"), max_length=150)
+    patronymic = models.CharField(_("Отчество"), max_length=150)
+    position = models.CharField(_("Должность"), max_length=150)
+    desc = RichTextField(verbose_name=_("Описание"))
+    image = models.ImageField(null=True, blank=False, verbose_name=_("Фото"))
+
+    class Meta:
+        verbose_name = "Сотрудник"
+        verbose_name_plural = "Сотрудники"
+
+
+    def __str__(self):
+        return f"{self.last_name}"
+
+    def get_full_name(self):
+        return f"{self.last_name} {self.first_name} {self.patronymic}"

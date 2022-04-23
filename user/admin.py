@@ -3,7 +3,7 @@ from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group as BaseGroup
 
-from .models import ProxyGroup, User
+from .models import Employee, ProxyGroup, User
 
 
 @admin.register(User)
@@ -49,6 +49,17 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
         (("Активность"), {"fields": ("last_login", "date_joined")}),
+    )
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = (
+        "first_name",
+        "last_name",
+        "patronymic",
+        "position",
+        "desc",
+        "image",
     )
 
 

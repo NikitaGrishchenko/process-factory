@@ -1,9 +1,11 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic import FormView, ListView, TemplateView
+from django.views.generic.detail import DetailView
 
 from .forms import UserRegistrationForm
+from .models import Employee
 
 User = get_user_model()
 
@@ -30,6 +32,12 @@ class RegistrationView(FormView):
         user.save()
         form.save_m2m()
         return super().form_valid(form)
+
+
+class EmployeeDetailView(DetailView):
+    model = Employee
+    template_name = "pages/employee-detail.html"
+
 
 
 class ThanksView(TemplateView):

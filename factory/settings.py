@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'import_export',
     'widget_tweaks',
+    'ckeditor',
     'user',
     # 'reference',
     # 'survey',
@@ -145,3 +146,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.User'
 LOGIN_REDIRECT_URL = '/'
+
+
+CKEDITOR_BASEPATH='/static/ckeditor/ckeditor/'

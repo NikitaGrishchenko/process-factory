@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  {{object.title}}
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+  <section class="employee-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>
+            {{object.get_full_name}}
+          </h1>
+        </div>
+        <div class="col-6">
+          {% if object.image %}
+            <img src="{{object.image.url}}" alt="employee-image" class="img-fluid">
+          {% endif %}
+        </div>
+        <div class="col-6">
+          <p>{{object.position}}</p>
+          {{object.desc | safe}}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content%}
+
+{% comment %} {% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %} {% endcomment %}
