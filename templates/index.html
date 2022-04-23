@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} {% block title %}
+!
+{% endblock title %} {% endcomment %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+  {% include 'components/header.html'%}
+{% endblock content %}
+
+{% block footer %}
+  {% comment %} {% include 'include/footer.html' %} {% endcomment %}
+{% endblock footer %}
+

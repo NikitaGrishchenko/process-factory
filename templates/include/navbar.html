@@ -1,0 +1,50 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <div class="container">
+    <a href="{% url 'home' %}">
+      <img class="header-logo" src="{% static 'images/logo.svg' %}" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto ml-3">
+        {% comment %} <li class="nav-item">
+          <a class="nav-link" href="{% url 'reference:news-list'  %}">Новости</a>
+        </li> {% endcomment %}
+        {% comment %} <li class="nav-item">
+          <a class="nav-link" href="{% url 'reference:tariff'  %}">Тарифы</a>
+        </li> {% endcomment %}
+
+        {% comment %} {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#questions-from-guests-form">Задать вопрос</a>
+          </li>
+        {% endif %} {% endcomment %}
+
+        {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:registration' %}">Регистрация</a>
+          </li>
+        {% endif %}
+        {% comment %} {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:account' %}">Личный кабинет</a>
+          </li>
+        {% endif %} {% endcomment %}
+      </ul>
+      <span class="navbar-text">
+        {% if user.is_authenticated %}
+          {% comment %} <a href="{% url 'user:account'  %}" class="mr-3">
+            {{request.user.first_name}} {{request.user.last_name}}
+          </a> {% endcomment %}
+          {{request.user.first_name}} {{request.user.last_name}}
+          <button onclick="location.href='{% url 'logout' %}'" type="button" class="btn btn-outline-dark">Выйти</button>
+        {% else %}
+          <button onclick="location.href='{% url 'login' %}'" type="button" class="btn btn-outline-dark">Войти</button>
+        {% endif %}
+      </span>
+    </div>
+  </div>
+</nav>
