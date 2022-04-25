@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import FormView, ListView, TemplateView
 from django.views.generic.detail import DetailView
+from program.models import UserEducationalProgram
 
 from .forms import UserRegistrationForm
 from .models import Employee
@@ -39,6 +40,26 @@ class EmployeeDetailView(DetailView):
     template_name = "pages/employee-detail.html"
 
 
+class AccountVeiw(TemplateView):
+
+    template_name = "pages/account.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('/')
+        return super(AccountVeiw, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_user = self.request.user
+        try:
+            user_educational_programs = UserEducationalProgram.objects.filter(user=current_user)
+        except UserEducationalProgram.DoesNotExist:
+            user_educational_programs = []
+
+        context['user'] = User.objects.get(id=current_user.id)
+        context['user_educational_programs'] = user_educational_programs
+        return context
 
 class ThanksView(TemplateView):
     """

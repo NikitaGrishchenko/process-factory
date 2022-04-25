@@ -1,0 +1,26 @@
+{% load static %}
+
+{% if programs|length > 0%}
+  <section class="last-programs">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>
+            Образовательные программы
+          </h1>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            {% for program in programs %}
+              <div class="col-4">
+                <a href="{% url 'program:detail' pk=program.id %}">
+                  {{program.title}}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

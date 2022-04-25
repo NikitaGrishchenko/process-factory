@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Личный кабинет
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+  <section class="account">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Личный кабинет</h1>
+        </div>
+        <div class="col-12">
+          <p style="font-size: 20px" class="my-3 font-weight-bold">{{user.last_name}} {{user.first_name}} {{user.patronymic}}</p>
+        </div>
+        <div class="col-4">
+          <p>Телефон: {{user.phone}}</p>
+        </div>
+        <div class="col-4">
+          <p>E-mail: {{user.email}}</p>
+        </div>
+      </div>
+      <div class="row">
+        {% if user_educational_programs|length > 0 %}
+          <div class="col-12">
+            <h2>
+              Мои образовательные программы
+            </h2>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              {% for program in user_educational_programs %}
+                <div class="col-4">
+                  {{program.educational_program.title}}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+
+

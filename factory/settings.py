@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'ckeditor',
     'user',
-    # 'reference',
+    'program',
     # 'survey',
 ]
 

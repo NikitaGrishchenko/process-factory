@@ -28,17 +28,14 @@
             <a class="nav-link" href="{% url 'user:registration' %}">Регистрация</a>
           </li>
         {% endif %}
-        {% comment %} {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'user:account' %}">Личный кабинет</a>
           </li>
-        {% endif %} {% endcomment %}
+        {% endif %}
       </ul>
       <span class="navbar-text">
         {% if user.is_authenticated %}
-          {% comment %} <a href="{% url 'user:account'  %}" class="mr-3">
-            {{request.user.first_name}} {{request.user.last_name}}
-          </a> {% endcomment %}
           {{request.user.first_name}} {{request.user.last_name}}
           <button onclick="location.href='{% url 'logout' %}'" type="button" class="btn btn-outline-dark">Выйти</button>
         {% else %}
