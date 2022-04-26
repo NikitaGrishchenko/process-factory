@@ -37,7 +37,9 @@
             <div class="row">
               {% for program in user_educational_programs %}
                 <div class="col-4">
-                  {{program.educational_program.title}}
+                  <a href="{% url 'program:detail' pk=program.id %}">
+                    {{program.educational_program.title}}
+                  </a>
                 </div>
               {% endfor %}
             </div>

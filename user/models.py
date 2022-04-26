@@ -34,7 +34,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_("Имя"), max_length=30)
     last_name = models.CharField(_("Фамилия"), max_length=150)
     patronymic = models.CharField(_("Отчество"), max_length=150)
-    email = models.EmailField(_("Электронная почта"))
+    email = models.EmailField(_("Электронная почта"), unique=True)
     phone = models.CharField(_("Номер телефона"), max_length=25)
     is_staff = models.BooleanField(
         _("Администратор"),
@@ -56,8 +56,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     EMAIL_FIELD = "email"
-    USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email"]
+    USERNAME_FIELD = "email"
+    # REQUIRED_FIELDS = ["email"]
 
     class Meta:
         verbose_name = _("Пользователь")
