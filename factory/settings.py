@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'import_export',
     'widget_tweaks',
+    'colorfield',
     'ckeditor',
     'user',
     'program',
+    'partners',
     # 'survey',
 ]
 

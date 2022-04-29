@@ -12,6 +12,16 @@ body {
   margin-bottom: 25px;
 }
 
+.parthers-area__title{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  height: 100px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+
 .login, .logout, .thanks {
   background: #333;
   min-height: 100vh;

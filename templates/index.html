@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static user program%}
+{% load static user program partners %}
 
 {% comment %} {% block title %}
 !
@@ -14,6 +14,7 @@
   {% employee %}
   {% include 'components/about-us.html'%}
   {% last_programs %}
+  {% partners %}
 {% endblock content %}
 
 {% block footer %}
