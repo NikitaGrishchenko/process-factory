@@ -1,5 +1,56 @@
+{% load static %}
+
 <section class="contacts">
   <div class="container">
-    контакты
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h5 class="social__title">Присоединяйтесь к нам в социальных сетях</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-between">
+        <div class="social__logo">
+          <a href="https://t.me/tiyk_rinh"><img src="{% static 'images/premium-icon-telegram-739260.png' %}"
+              alt="telegram"></a>
+        </div>
+        <div class="social__logo">
+          <a href="https://rutube.ru/channel/25966438/"><img src="{% static 'images/rutube.png' %}" alt="rutube"></a>
+        </div>
+        <div class="social__logo">
+          <a href="https://vk.com/tiyk_rsue"><img src="{% static 'images/free-icon-vk-2111828.png' %}" alt="vk"></a>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center">
+      <div class="col-xl-4 col-md-4 col-sm-12">
+        <div class="card__contacts">
+          <img src="{% static 'images/call.png'%}" alt="call">
+          <div class="info__contacts">
+            <p>ТЕЛЕФОН</p>
+            <span>+7(863) 240-58-40<br>
+              (внутренний 5-46)</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-md-4 col-sm-12">
+        <div class="card__contacts left__right__border">
+          <img src="{% static 'images/website.png'%}" alt="">
+          <div class="info__contacts">
+            <p>EMAIL</p>
+            <span>kafedratovqm@mail.ru</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-md-4 col-sm-12">
+        <div class="card__contacts">
+          <img src="{% static 'images/location.png'%}" alt="">
+          <div class="info__contacts">
+            <p>АДРЕС</p>
+            <span>г. Ростов-на-Дону,<br>
+              ул. Б.Садовая, 69, к. 527</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

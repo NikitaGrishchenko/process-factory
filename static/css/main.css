@@ -4,15 +4,19 @@ body {
   font-size: 16px;
 }
 
-.header, .employee-detail, .educational-program-detail, .registration, .account {
+.header,
+.employee-detail,
+.educational-program-detail,
+.registration,
+.account {
   padding-top: 80px;
 }
 
-.emloyee-card{
+.emloyee-card {
   margin-bottom: 25px;
 }
 
-.parthers-area__title{
+.parthers-area__title {
   display: flex;
   align-items: center;
   color: #fff;
@@ -22,14 +26,18 @@ body {
 }
 
 
-.login, .logout, .thanks {
+.login,
+.logout,
+.thanks {
   background: #333;
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
 
-.login-box, .thanks-box, .logout-box{
+.login-box,
+.thanks-box,
+.logout-box {
   background: #fff;
   padding: 50px 0px;
   border-radius: 5px;
@@ -41,18 +49,18 @@ body {
   margin-bottom: 25px;
 }
 
-.form-box{
-  margin: 10px ;
+.form-box {
+  margin: 10px;
   display: flex;
   justify-content: center;
 }
 
-.login-error{
+.login-error {
   width: 100%;
   margin-top: 15px;
 }
 
-.login-error__text{
+.login-error__text {
   color: red;
 }
 
@@ -121,7 +129,7 @@ img {
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
+article>*+* {
   margin-top: 1em;
 }
 
@@ -147,9 +155,10 @@ select {
 .flip-card {
   background-color: transparent;
   width: 300px;
-  height: 350px;
+  height: 280px;
   border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
@@ -168,11 +177,13 @@ select {
 }
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
+  /* Safari */
   backface-visibility: hidden;
 }
 
@@ -184,7 +195,151 @@ select {
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: #bbb;
   color: white;
   transform: rotateY(180deg);
+  border-radius: 15px;
+}
+
+
+
+
+
+
+/* Style cards Employeers */
+.flip-card {
+  margin: 15px 0 15px 0;
+  border-radius: 15px;
+}
+
+/* About-us */
+
+.title {
+  color: rgba(36, 100, 172, 1);
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  margin: 35px 0 35px 0;
+}
+
+.about__desc {
+  font-size: 18px;
+  line-height: 35px;
+  text-align: justify;
+}
+
+.about__content {
+  display: flex;
+  margin: 0 0 30px 0;
+}
+
+/* Contacts */
+
+.social__title {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(36, 100, 172, 1);
+
+  margin: 15px 0 25px 0;
+}
+
+.social__logo {
+  display: flex;
+  text-align: center;
+}
+
+
+.left__right__border {
+  border-right: 3px solid #000;
+  border-left: 3px solid #000;
+
+  height: 100%;
+}
+
+.card__contacts img {
+  padding-top: 15px;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.info__contacts span {
+  font-weight: 700;
+}
+
+.info__contacts p {
+  margin: 45px 0 10px 0;
+}
+
+/* Header */
+
+.header {
+  background: url(/static/images/Screenshot_1.png);
+  height: 100vh;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 70px;
+  color: rgba(36, 100, 172, 1);
+}
+
+
+.main__title {
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6);
+  position: relative;
+  top: 520px;
+  text-transform: uppercase;
+}
+
+
+.main__title h2 {
+  font-size: 50px;
+  color: rgba(1, 160, 226, 1);
+
+}
+
+
+/* .video-bg {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.video-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+} */
+
+/* Footer */
+
+footer {
+  margin-top: 30px;
+  padding-top: 30px;
+  background: url(/static/images/bg_footer.jpg) no-repeat;
+  height: 100%;
+}
+
+.footer__title {
+  padding-bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.list__links a {
+  color: #000;
+}
+
+.footer-logo {
+  width: 20%;
 }

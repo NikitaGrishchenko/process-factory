@@ -2,11 +2,30 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-box">
-          футер
-          <img class="header-logo" src="{% static 'images/logo.svg' %}" alt="logo">
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="footer__info">
+          <img class="footer-logo" src="{% static 'images/logo.svg' %}" alt="logo" >
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4 ">
+        <div class="footer__info">
+          <p class="footer__title">Полезные ссылки</p>
+          <ul class="list__links">
+            <li><a href="#">Сайты</a></li>
+            <li><a href="#">Лекции</a></li>
+            <li><a href="#">Библиотека качества</a></li>
+            <li><a href="#">Полезные материалы</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="footer__info">
+          <p class="footer__title">Мы ждем Вас</p>
+          <ul class="list__links">
+            <li><a href="#">Задать вопрос</a></li>
+            <li><a href="#">Записаться на мероприятие</a></li>
+          </ul>
         </div>
       </div>
     </div>
