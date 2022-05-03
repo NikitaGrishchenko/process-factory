@@ -19,7 +19,7 @@ body {
 .parthers-area__title {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: rgb(255, 255, 255);
   height: 100px;
   padding-left: 10px;
   border-radius: 5px;
@@ -29,7 +29,7 @@ body {
 .login,
 .logout,
 .thanks {
-  background: #333;
+  background: rgba(81, 153, 187, 0.719);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ body {
 .thanks-box,
 .logout-box {
   background: #fff;
-  padding: 50px 0px;
+  padding: 50px 20px;
   border-radius: 5px;
 }
 
@@ -52,7 +52,7 @@ body {
 .form-box {
   margin: 10px;
   display: flex;
-  justify-content: center;
+
 }
 
 .login-error {
@@ -233,6 +233,25 @@ select {
   margin: 0 0 30px 0;
 }
 
+
+/* Education programm */
+
+.title-group_programm p {
+  color: rgba(141, 141, 141, 0.733);
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  padding: 15px 0 35px 0;
+}
+
+.card-program {
+  background: rgb(204, 200, 200);
+  border-radius: 10px;
+  text-align: justify;
+}
+
+
+
 /* Contacts */
 
 .social__title {
@@ -274,9 +293,8 @@ select {
 /* Header */
 
 .header {
-  background: url(/static/images/Screenshot_1.png);
-  height: 100vh;
-  width: 100%;
+  height: 100%;
+
 }
 
 .header h1 {
@@ -288,7 +306,7 @@ select {
 .main__title {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6);
   position: relative;
-  top: 520px;
+  top: 250px;
   text-transform: uppercase;
 }
 
@@ -299,8 +317,7 @@ select {
 
 }
 
-
-/* .video-bg {
+.video-bg {
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -319,15 +336,22 @@ select {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-} */
+}
+
+
 
 /* Footer */
+
+.content {
+  min-height: calc(100vh - 204px);
+}
 
 footer {
   margin-top: 30px;
   padding-top: 30px;
   background: url(/static/images/bg_footer.jpg) no-repeat;
-  height: 100%;
+  height: 204px;
+
 }
 
 .footer__title {
@@ -342,4 +366,54 @@ footer {
 
 .footer-logo {
   width: 20%;
+}
+
+
+/* User account */
+
+.lc_title {
+  color: rgba(36, 100, 172, 1);
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  margin: 15px 0 15px 0;
+}
+
+.lc_title p {
+  line-height: 32px;
+}
+
+.username {
+  color: rgb(0, 0, 0);
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.user__info {
+  color: rgb(68, 68, 68);
+  padding-top: 15px;
+  font-size: 18px;
+}
+
+.horizontal__line {
+  width: 100%;
+  border-width: 3px;
+}
+
+.lc_subtitle {
+  color: rgb(110, 110, 110);
+  padding: 5px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.activity__title a {
+  color: rgb(92, 92, 92);
+}
+
+/* Regestration */
+
+.registration {
+  color: rgba(1, 160, 226, 1);
 }

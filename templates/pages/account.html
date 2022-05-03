@@ -13,42 +13,59 @@
   <section class="account">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <h1>Личный кабинет</h1>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <h1  class="lc_title">Личный кабинет</h1>
         </div>
-        <div class="col-12">
-          <p style="font-size: 20px" class="my-3 font-weight-bold">{{user.last_name}} {{user.first_name}} {{user.patronymic}}</p>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <h3 class="lc_title"><p>участника проектной площадки <br> "Фабрика процессов производства продукции и  услуг"</p></h1>
         </div>
-        <div class="col-4">
-          <p>Телефон: {{user.phone}}</p>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="username">
+            <p>{{user.last_name}} {{user.first_name}} {{user.patronymic}}</p>
+          </div>
+          
         </div>
-        <div class="col-4">
-          <p>E-mail: {{user.email}}</p>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="user__info">
+            <p>E-mail: {{user.email}}</p>
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="user__info">
+            <p>Телефон: {{user.phone}}</p>
+          </div>
         </div>
       </div>
+      <hr class="horizontal__line">
       <div class="row">
         {% if user_educational_programs|length > 0 %}
-          <div class="col-12">
-            <h2>
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <h2 class="lc_subtitle">
               Мои образовательные программы
             </h2>
           </div>
-          <div class="col-12">
+          <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
-              {% for program in user_educational_programs %}
-                <div class="col-4">
-                  <a href="{% url 'program:detail' pk=program.id %}">
+              <div class="activity__title mt-2">
+                {% for program in user_educational_programs %}
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <a href="{% url 'program:detail' pk=program.id   %}">
                     {{program.educational_program.title}}
                   </a>
                 </div>
               {% endfor %}
+              </div>
             </div>
           </div>
         {% endif %}
       </div>
+      <hr class="horizontal__line">
     </div>
   </section>
 {% endblock content %}
 
-
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}
 

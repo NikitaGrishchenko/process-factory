@@ -5,19 +5,76 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>
+          <h1 class="title">
             Образовательные программы
           </h1>
         </div>
-        <div class="col-12">
-          <div class="row">
-            {% for program in programs %}
-              <div class="col-4">
-                <a href="{% url 'program:detail' pk=program.id %}">
-                  {{program.title}}
-                </a>
+        <div class="col-4">
+          <div class="card-program">
+            <div class="title-group_programm">
+              <p>
+                Название группы
+              </p>
+          </div>
+          <div class="col-4">
+            <div class="row">
+              {% for program in programs %}
+                 <div class="col-4">
+                  <a href="{% url 'program:detail' pk=program.id %}">
+                     {{program.title}}
+                  </a>
+                </div>
+                <hr class="horizontal__line">
+               {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      
+      <div class="col-4">
+          <div class="card-program">
+            <div class="title-group_programm">
+              <p>
+                Название группы
+              </p>
+            </div>
+            <div class="col-4">
+              <div class="row">
+                {% for program in programs %}
+                  <div class="col-12">
+                    <a href="{% url 'program:detail' pk=program.id %}">
+                      {{program.title}}
+                    </a>
+                  </div>
+                  <hr class="horizontal__line">
+                {% endfor %}
               </div>
-            {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card-program">
+            <div class="title-group_programm">
+              <p>
+                Название группы
+              </p>
+            </div>
+            <div class="col-4">
+              <div class="row">
+                {% for program in programs %}
+                  <div class="col-12">
+                    <a href="{% url 'program:detail' pk=program.id %}">
+                      {{program.title}}
+                    </a>
+                  </div>
+                  <hr class="horizontal__line">
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
