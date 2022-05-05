@@ -195,12 +195,12 @@ select {
 
 /* Style the back side */
 .flip-card-back {
+  padding-top: 15%;
   background-color: #bbb;
   color: white;
   transform: rotateY(180deg);
   border-radius: 15px;
 }
-
 
 
 
@@ -234,7 +234,7 @@ select {
 }
 
 
-/* Education programm */
+/* Education programm on index page */
 
 .title-group_programm p {
   color: rgba(141, 141, 141, 0.733);
@@ -250,6 +250,30 @@ select {
   text-align: justify;
 }
 
+/* Education programm detail */
+
+.title-group_programm{
+  color: rgba(141, 141, 141, 0.733);
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  padding: 0 0 25px 0;
+}
+
+.programm-desc{
+  font-size: 18px;
+  line-height: 35px;
+  text-align: justify;
+}
+
+.users-count-btn{
+  margin-top: 15%;
+  margin-left: 20%;
+}
+
+.count-users{
+  padding-top: 5%;
+}
 
 
 /* Contacts */
@@ -416,4 +440,12 @@ footer {
 
 .registration {
   color: rgba(1, 160, 226, 1);
+}
+
+/* Logout */
+
+.login-out__logo{
+  width: 30%;
+  display: inline-block;
+  margin: 25px 0;
 }

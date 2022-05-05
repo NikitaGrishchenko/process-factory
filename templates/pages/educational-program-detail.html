@@ -15,10 +15,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>
+          <h1 class="title">
             {{object.title}}
           </h1>
-          <p>
+          <p class="title-group_programm">
             {{object.group}}
           </p>
           <p>
@@ -26,10 +26,14 @@
           </p>
         </div>
         <div class="col-8">
-          {{object.description|safe}}
+          <div class="programm-desc">
+            {{object.description|safe}}
+          </div>
+         
         </div>
-        <div class="col-4">
-          {% if user.is_authenticated %}
+        <div class="col-4 ">
+          <div class="users-count-btn">
+            {% if user.is_authenticated %}
             {% if is_user_in_program %}
               <p>Вы зарегистрированы на мероприятие</p>
             {% else %}
@@ -39,9 +43,14 @@
             <p class="mb-3">Авторизуйтесь, чтобы принять участие</p>
             <button onclick="location.href='{% url 'login' %}'" type="button" class="btn btn-outline-dark">Войти</button>
           {% endif %}
-          <p>Всего участников: {{count_users}}</p>
+          <p class="count-users">Всего участников: {{count_users}}</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 {% endblock content%}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}
