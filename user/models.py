@@ -93,3 +93,24 @@ class Employee(models.Model):
 
     def get_full_name(self):
         return f"{self.last_name} {self.first_name} {self.patronymic}"
+
+
+class QuestionsFromGuests(models.Model):
+    """
+    Вопросы от гостей сайта
+    """
+    first_name = models.CharField(_("Имя"), max_length=45)
+    last_name = models.CharField(_("Фамилия"), max_length=45)
+    patronymic = models.CharField(_("Отчество"), max_length=45, null=True, blank=True)
+    email = models.EmailField(_("Электронная почта"))
+    phone = models.CharField(_("Номер телефона"), max_length=25)
+    text = models.TextField(_("Комментарий"))
+    date_created = models.DateTimeField(_("Дата отправки"), default=timezone.now, blank=True)
+
+
+    class Meta:
+        verbose_name = "Обратная связь"
+        verbose_name_plural = "Обратная связь"
+
+    def __str__(self):
+        return self.email

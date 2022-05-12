@@ -6,11 +6,26 @@ from django.views.generic.detail import DetailView
 from program.models import UserEducationalProgram
 from business.models import UserBusinessGames
 
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, QuestionsFromGuestsForm
 from .models import Employee
 
 User = get_user_model()
 
+
+class QuestionsFromGuestsForm(FormView):
+    """
+    Форма обратной связи
+    """
+
+    template_name = "pages/feedback.html"
+    form_class = QuestionsFromGuestsForm
+    success_url = reverse_lazy("user:success")
+
+    def form_valid(self, form):
+        feedback = form.save(commit=False)
+        feedback.save()
+        form.save_m2m()
+        return super().form_valid(form)
 
 class RegistrationView(FormView):
     """

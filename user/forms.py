@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from .models import QuestionsFromGuests
 
 User = get_user_model()
 
@@ -42,4 +43,28 @@ class UserRegistrationForm(forms.ModelForm):
             "patronymic",
             "phone",
             "email",
+        )
+
+
+class QuestionsFromGuestsForm(forms.ModelForm):
+    """
+    Форма обратной связи
+    """
+
+    consent = forms.BooleanField(
+        label=_("Согласие на обработку персональных данных")
+    )
+    email = forms.EmailField(label=_("E-mail"))
+
+
+    class Meta:
+        model = QuestionsFromGuests
+        fields = (
+            "first_name",
+            "last_name",
+            "patronymic",
+            "phone",
+            "email",
+            "phone",
+            "text",
         )

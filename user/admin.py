@@ -3,7 +3,7 @@ from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group as BaseGroup
 
-from .models import Employee, ProxyGroup, User
+from .models import Employee, ProxyGroup, QuestionsFromGuests, User
 
 
 @admin.register(User)
@@ -60,6 +60,18 @@ class EmployeeAdmin(admin.ModelAdmin):
         "position",
         "desc",
         "image",
+    )
+
+@admin.register(QuestionsFromGuests)
+class QuestionsFromGuestsAdmin(admin.ModelAdmin):
+    list_display = (
+        "first_name",
+        "last_name",
+        "patronymic",
+        "email",
+        "phone",
+        "text",
+        "date_created",
     )
 
 
