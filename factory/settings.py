@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'user',
     'program',
     'partners',
-    # 'survey',
+    'business',
 ]
 
 

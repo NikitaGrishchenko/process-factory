@@ -1,18 +1,18 @@
 {% load static %}
 
-{% if programs|length > 0%}
+{% if business|length > 0%}
   <section class="last-programs">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <h1 class="title">
-            Образовательные программы
+            Деловые игры
           </h1>
         </div>
-        {% for program in programs %}
+        {% for program in business %}
           <div class="col-4">
             <div class="card-program">
-              <a href="{% url 'program:detail' pk=program.id %}">
+              <a href="{% url 'business:detail' pk=program.id %}">
                 <p class="title-group_programm">
                   {{program.group}}
                 </p>

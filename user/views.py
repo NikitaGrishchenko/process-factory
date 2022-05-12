@@ -4,6 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import FormView, ListView, TemplateView
 from django.views.generic.detail import DetailView
 from program.models import UserEducationalProgram
+from business.models import UserBusinessGames
 
 from .forms import UserRegistrationForm
 from .models import Employee
@@ -57,8 +58,14 @@ class AccountVeiw(TemplateView):
         except UserEducationalProgram.DoesNotExist:
             user_educational_programs = []
 
+        try:
+            user_business_games = UserBusinessGames.objects.filter(user=current_user)
+        except UserBusinessGames.DoesNotExist:
+            user_business_games = []
+
         context['user'] = User.objects.get(id=current_user.id)
         context['user_educational_programs'] = user_educational_programs
+        context['user_business_games'] = user_business_games
         return context
 
 class ThanksView(TemplateView):

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  {{object.title}}
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+  <section class="educational-program-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title">
+            {{object.title}}
+          </h1>
+          <p class="title-group_programm">
+            {{object.group}}
+          </p>
+          <p>
+            {% comment %} {{object.date}} {% endcomment %}
+          </p>
+        </div>
+        <div class="col-8">
+          <div class="programm-desc">
+            {{object.description|safe}}
+          </div>
+
+        </div>
+        <div class="col-4 ">
+          <div class="users-count-btn">
+            {% if user.is_authenticated %}
+            {% if is_user_in_program %}
+              <p>Вы зарегистрированы на мероприятие</p>
+            {% else %}
+            <button onclick="location.href='{% url 'business:registration' pk=object.id %}'" type="button" class="btn">Участвовать</button>
+            {% endif %}
+          {% else %}
+            <p class="mb-3">Авторизуйтесь, чтобы принять участие</p>
+            <button onclick="location.href='{% url 'login' %}'" type="button" class="btn btn-outline-dark">Войти</button>
+          {% endif %}
+          <p class="count-users">Всего участников: {{count_users}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content%}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

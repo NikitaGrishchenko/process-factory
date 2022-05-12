@@ -23,7 +23,7 @@
           <div class="username">
             <p>{{user.last_name}} {{user.first_name}} {{user.patronymic}}</p>
           </div>
-          
+
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="user__info">
@@ -50,7 +50,7 @@
               <div class="activity__title mt-2">
                 {% for program in user_educational_programs %}
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <a href="{% url 'program:detail' pk=program.id   %}">
+                  <a href="{% url 'program:detail' pk=program.id %}">
                     {{program.educational_program.title}}
                   </a>
                 </div>
@@ -61,6 +61,29 @@
         {% endif %}
       </div>
       <hr class="horizontal__line">
+
+      <div class="row">
+        {% if user_business_games|length > 0 %}
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <h2 class="lc_subtitle">
+              Мои деловые игры
+            </h2>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+              <div class="activity__title mt-2">
+                {% for program in user_business_games %}
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <a href="{% url 'business:detail' pk=program.id %}">
+                    {{program.business_games.title}}
+                  </a>
+                </div>
+              {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
     </div>
   </section>
 {% endblock content %}

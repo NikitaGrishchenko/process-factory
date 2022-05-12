@@ -10,7 +10,7 @@ register = template.Library()
 
 @register.inclusion_tag("components/last-programs.html")
 def last_programs() -> dict:
-    programs = EducationalProgram.objects.all()[:6]
+    programs = EducationalProgram.objects.all().order_by('-id')[:6]
     return {
         "programs": programs,
     }
