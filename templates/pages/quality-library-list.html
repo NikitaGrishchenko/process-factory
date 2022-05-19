@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Библиотека качества
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<section class="quality-library-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>
+          Библиотека качества
+        </h1>
+      </div>
+      <div class="col-12">
+        <h4>
+          Книжный вариант:
+        </h4>
+      </div>
+      {% if book|length == 0%}
+      <div class="col-12">
+        <h5>Ничего нет</h5>
+      </div>
+      {% endif %}
+      {% for item in book %}
+          <div class="col-12">
+            <div class="card-quality-library-list">
+              <a href="{{item.url}}" target="_blank">
+                {{ forloop.counter }}. {{item.title}}
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      <div class="col-12">
+        <h4>
+          Электронный вариант::
+        </h4>
+      </div>
+      {% if book|length == 0%}
+      <div class="col-12">
+        <h5>Ничего нет</h5>
+      </div>
+      {% endif %}
+      {% for item in elec %}
+          <div class="col-12">
+            <div class="card-quality-library-list">
+              <a href="{{item.url}}" target="_blank">
+                {{ forloop.counter }}. {{item.title}}
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock content %}

@@ -10,7 +10,10 @@ body {
 .registration,
 .account,
 .release-list,
-.release-detail {
+.release-detail,
+.site-list,
+.quality-library-list,
+.useful-materials {
   padding-top: 80px;
 }
 
