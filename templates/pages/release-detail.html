@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{object.title}}
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<section class="release-detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>
+          {{object.title}}
+        </h1>
+      </div>
+      {% if object.date_of_event %}
+        <div class="col-12">
+          Дата проведения: {{object.date_of_event}}
+        </div>
+      {% endif %}
+      {% if object.description %}
+        <div class="col-12">
+          {{object.description | safe}}
+        </div>
+      {% endif %}
+      {% if object.documents %}
+      <div class="col-12">
+        <h4>
+          Полезные документы
+        </h4>
+      </div>
+        {% for document in object.documents.all %}
+          <div class="col-12">
+            <a href="{{document.file.url}}" target="_blank">{{document}}</a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock content %}

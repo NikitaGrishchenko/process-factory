@@ -8,7 +8,9 @@ body {
 .employee-detail,
 .educational-program-detail,
 .registration,
-.account {
+.account,
+.release-list,
+.release-detail {
   padding-top: 80px;
 }
 

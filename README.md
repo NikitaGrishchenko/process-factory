@@ -1,6 +1,6 @@
 ```
 django-admin startproject factory - создание проекта
-python manage.py startapp business - создание приложение "пользователи"
+python manage.py startapp release - создание приложение "пользователи"
 
 python -m venv .venv – создание виртуального окружения Windows
 source .venv/Scripts/activate – активация виртуального окружения Windows
