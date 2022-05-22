@@ -14,9 +14,10 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>
+        <h1 class="title">
           Сайты
         </h1>
+        <hr class="horizontal__line">
       </div>
       {% if object_list|length == 0%}
       <div class="col-12">
@@ -25,7 +26,7 @@
       {% endif %}
       {% for site in object_list %}
           <div class="col-12">
-            <div class="card-site-list">
+            <div class="card-site-list mb-2">
               <a href="{{site.url}}" target="_blank">
                 {{ forloop.counter }}. {{site.title}}
               </a>
@@ -35,4 +36,8 @@
     </div>
   </div>
 </section>
+
 {% endblock content %}
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

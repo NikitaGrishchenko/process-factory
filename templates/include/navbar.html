@@ -9,12 +9,39 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto ml-3">
+      <ul class="navbar-nav mr-auto">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Главная
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="https://rsue.ru/tour/tour.html">3D - тур</a>
+            <a class="dropdown-item" href="#employee">Наши сотруднки</a>
+            <a class="dropdown-item" href="#partners">Наши потребители</a>
+            <a class="dropdown-item" href="#partners">Наши партнеры</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Наши услуги
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Тематические выпуски</a>
+            <a class="dropdown-item" href="#">Деловые игры</a>
+            <a class="dropdown-item" href="#">Образовательные программы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Наши результаты
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Наши проекты</a>
+          </div>
+        </div>
+
         {% comment %} <li class="nav-item">
           <a class="nav-link" href="{% url 'reference:news-list'  %}">Новости</a>
-        </li> {% endcomment %}
-        {% comment %} <li class="nav-item">
-          <a class="nav-link" href="{% url 'reference:tariff'  %}">Тарифы</a>
         </li> {% endcomment %}
 
         {% comment %} {% if not user.is_authenticated %}
@@ -24,13 +51,13 @@
         {% endif %} {% endcomment %}
 
         {% if not user.is_authenticated %}
-          <li class="nav-item">
+          <li class="nav-item lc">
             <a class="nav-link" href="{% url 'user:registration' %}">Регистрация</a>
           </li>
         {% endif %}
         {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'user:account' %}">Личный кабинет</a>
+          <li class="nav-item lc">
+            <a class="nav-link" href="{% url 'user:account' %}"> <img src="/static/images/login.png" alt="lc"></a>
           </li>
         {% endif %}
       </ul>

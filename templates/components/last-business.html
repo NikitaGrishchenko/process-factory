@@ -11,15 +11,22 @@
         </div>
         {% for program in business %}
           <div class="col-4">
-            <div class="card-program">
-              <a href="{% url 'business:detail' pk=program.id %}">
-                <p class="title-group_programm">
-                  {{program.group}}
-                </p>
-                <p>
-                  {{program.title}}
-                </p>
-                <hr class="horizontal__line">
+            <div class="card-program mb-3">
+              <p class="title-group_programm">
+                {{program.group}}
+              </p>
+              <a href="{% url 'program:detail' pk=program.id %}">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="cont-title mb-3">
+                        <p>
+                          {{program.title}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>        
               </a>
             </div>
           </div>

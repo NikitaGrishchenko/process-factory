@@ -11,15 +11,23 @@
         </div>
         {% for program in programs %}
           <div class="col-4">
-            <div class="card-program">
-              <a href="{% url 'program:detail' pk=program.id %}">
-                <p class="title-group_programm">
+            <div class="card-program mb-3">
+                <p class="title-group_programm text-center">
                   {{program.group}}
                 </p>
-                <p>
-                  {{program.title}}
-                </p>
-                <hr class="horizontal__line">
+              
+              <a href="{% url 'program:detail' pk=program.id %}">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="cont-title mb-3">
+                        <p>
+                          {{program.title}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>        
               </a>
             </div>
           </div>

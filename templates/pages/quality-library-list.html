@@ -14,12 +14,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>
+        <h1 class="title">
           Библиотека качества
         </h1>
       </div>
+      <hr class="horizontal__line">
       <div class="col-12">
-        <h4>
+        <h4 class="book-subtitle mb-3">
           Книжный вариант:
         </h4>
       </div>
@@ -38,8 +39,8 @@
           </div>
         {% endfor %}
       <div class="col-12">
-        <h4>
-          Электронный вариант::
+        <h4 class="book-subtitle mb-3 mt-5">
+          Электронный вариант:
         </h4>
       </div>
       {% if book|length == 0%}
@@ -60,3 +61,7 @@
   </div>
 </section>
 {% endblock content %}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

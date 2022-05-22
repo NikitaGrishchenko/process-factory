@@ -10,11 +10,11 @@
 {% endblock navbar %}
 
 {% block content %}
-<section class="release-list">
+<section class="release-list" id="release-list">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>
+        <h1 class="title">
           Тематические выпуски
         </h1>
       </div>
@@ -27,8 +27,9 @@
           <div class="col-4">
             <div class="card-release">
               <a href="{% url 'release:detail' pk=program.id %}">
-                <p>
-                  {{program.title}}-{{program.date_of_event}}
+                <p class="cont-title">
+                  {{program.title}}
+                  <span class="date">{{program.date_of_event}}</span>
                 </p>
               </a>
             </div>
@@ -38,3 +39,7 @@
   </div>
 </section>
 {% endblock content %}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

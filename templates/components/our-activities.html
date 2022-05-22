@@ -6,14 +6,22 @@
           Наши активности
         </h1>
       </div>
-      <div class="col-4">
-        <a href="{% url 'release:list' %}">Тематические выпуски</a>
-      </div>
-      <div class="col-4">
-
-      </div>
-      <div class="col-4">
-
+      <div class="col-sm-12 col-md 6 col-lg-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <a href="{% url 'release:list' %}">
+            <div class="cont-activity">
+              <div class="img-activity">
+                <img src="/static/images/ТемВыпуски.jpg" alt="Тематические выпуски">
+              </div>
+            </div>
+            <div class="title-activity">
+              <a href="{% url 'release:list' %}">
+                Тематические<br> выпуски</a>
+            </div>
+          </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

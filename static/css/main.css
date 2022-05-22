@@ -196,6 +196,11 @@ select {
 .flip-card-front {
   background-color: #bbb;
   color: black;
+  border-radius: 15px;
+}
+
+.flip-card-front img{
+  border-radius: 15px 15px 0 0;
 }
 
 /* Style the back side */
@@ -224,7 +229,7 @@ select {
   font-size: 32px;
   text-align: center;
   font-weight: 700;
-  margin: 35px 0 35px 0;
+  margin: 30px 0 15px 0;
 }
 
 .about__desc {
@@ -235,6 +240,7 @@ select {
 
 .about__content {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 30px 0;
 }
 
@@ -253,7 +259,23 @@ select {
   background: rgb(204, 200, 200);
   border-radius: 10px;
   text-align: justify;
+  
 }
+
+.card-program a{
+  text-decoration: none;
+  color: rgb(84, 141, 192);
+}
+
+/* Business game on index page */
+.cont-title{
+  background-color: rgb(233, 229, 229);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: rgb(48, 120, 202)
+  
+}
+
 
 /* Education programm detail */
 
@@ -348,7 +370,7 @@ select {
 
 .video-bg {
   height: 100vh;
-  width: 100%;
+  width: 120%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -367,6 +389,13 @@ select {
   object-fit: cover;
 }
 
+/* Navbar */
+
+.dropdown{
+  padding: 15px 0 10px 20px;
+}
+
+
 
 
 /* Footer */
@@ -378,9 +407,10 @@ select {
 footer {
   margin-top: 30px;
   padding-top: 30px;
-  background: url(/static/images/bg_footer.jpg) no-repeat;
+  background-color: rgba(222, 214, 212, 1);
+  /* background: url(/static/images/bg_footer.jpg) no-repeat; */
   height: 204px;
-
+  
 }
 
 .footer__title {
@@ -395,6 +425,10 @@ footer {
 
 .footer-logo {
   width: 20%;
+}
+
+.footer__info{
+
 }
 
 
@@ -453,4 +487,61 @@ footer {
   width: 30%;
   display: inline-block;
   margin: 25px 0;
+}
+
+/* Card activity */
+.cont-activity img{
+  border-radius: 20px;
+}
+
+.title-activity a{
+  position: relative;
+  bottom: 80px;
+  left: -15px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+/* Materials */
+
+.useful-materials{
+  overflow-x: hidden;
+}
+
+/* release */
+
+.card-release span{
+  text-align: right;
+}
+
+.date{
+  color: rgb(134, 126, 126);
+  
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+  
+  .footer{
+    height: 100%;
+  }
+  
+  .footer-logo{
+    display: block;
+    margin: 0px auto 15px auto;
+
+  }
+  .footer__info{
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  
 }
