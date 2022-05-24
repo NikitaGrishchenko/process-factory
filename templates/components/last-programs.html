@@ -10,27 +10,31 @@
           </h1>
         </div>
         {% for program in programs %}
-          <div class="col-4">
-            <div class="card-program mb-3">
-                <p class="title-group_programm text-center">
-                  {{program.group}}
-                </p>
-              
-              <a href="{% url 'program:detail' pk=program.id %}">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="cont-title mb-3">
-                        <p>
-                          {{program.title}}
-                        </p>
+          
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="card-program mb-3">
+                  <p class="title-group_programm text-center">
+                    {{program.group}}
+                  </p>
+                
+                <a href="{% url 'program:detail' pk=program.id %}">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="cont-title mb-3">
+                          <p>
+                            {{program.title}}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>        
-              </a>
+                  </div>        
+                </a>
+              </div>
             </div>
-          </div>
+          
+            
+          
         {% endfor %}
       </div>
     </div>
