@@ -1,10 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
-from .models import BusinessGames, UserBusinessGames
+from .forms import FeedbackUserBusinessGamesForm
+from .models import BusinessGames, FeedbackUserBusinessGames, UserBusinessGames
 
 
 class BusinessGamesDetailView(DetailView):
@@ -29,6 +30,8 @@ class BusinessGamesDetailView(DetailView):
         except UserBusinessGames.DoesNotExist:
             context['is_user_in_program'] = False
 
+        context['feedbacks'] = FeedbackUserBusinessGames.objects.filter(user_business_games_id=self.kwargs['pk']).order_by('-date_created')
+
         return context
 
 def registration_to_program(request, pk):
@@ -42,3 +45,25 @@ def registration_to_program(request, pk):
     )
     user_business_games.save()
     return HttpResponseRedirect(reverse('user:success'))
+
+
+def send_feedback(request, pk):
+    """
+    Отправка отзыва
+    """
+    if request.method == 'POST':
+        form = FeedbackUserBusinessGamesForm(request.POST)
+        if form.is_valid():
+
+            try:
+                user_business_games = UserBusinessGames.objects.get(id=pk)
+            except UserBusinessGames.DoesNotExist:
+                return redirect('user:error')
+
+            feedback = FeedbackUserBusinessGames(
+                user=request.user,
+                user_business_games=user_business_games,
+                text=form.cleaned_data['text'],
+            )
+            feedback.save()
+        return redirect('business:detail', pk=pk)

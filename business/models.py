@@ -69,3 +69,21 @@ class UserBusinessGames(models.Model):
 
     def __str__(self):
         return f"{self.user} {self.business_games}"
+
+
+class FeedbackUserBusinessGames(models.Model):
+    """
+    Отзыв
+    """
+
+    user = models.ForeignKey(User, verbose_name=_("Пользователь"), on_delete=models.CASCADE)
+    user_business_games = models.ForeignKey(UserBusinessGames, verbose_name=_("Деловая игра"), on_delete=models.CASCADE)
+    date_created = models.DateTimeField(_("Дата создания"), default=timezone.now)
+    text = models.CharField(_("Текст"), max_length=300)
+
+    class Meta:
+        verbose_name = _("Отзыв")
+        verbose_name_plural = _("Отзывы")
+
+    def __str__(self):
+        return f"Отзыв {self.user} к {self.user_business_games}"

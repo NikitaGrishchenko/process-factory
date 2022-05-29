@@ -60,7 +60,7 @@ def send_feedback(request, pk):
             try:
                 educational_program = EducationalProgram.objects.get(id=pk)
             except EducationalProgram.DoesNotExist:
-                return EducationalProgram('user:error')
+                return redirect('user:error')
 
             feedback = FeedbackToEducationalProgram(
                 user=request.user,

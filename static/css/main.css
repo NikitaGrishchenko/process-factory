@@ -15,7 +15,9 @@ body {
 .quality-library-list,
 .useful-materials,
 .our-projects-list,
-.our-projects-detail {
+.our-projects-detail,
+.news-detail,
+.news-list {
   padding-top: 80px;
 }
 

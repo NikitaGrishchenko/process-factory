@@ -1,0 +1,35 @@
+{% load static %}
+
+<section class="news">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="main-header">
+          Новости
+        </p>
+      </div>
+      {% if news %}
+        {% for item in news %}
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
+              <div class="news-box">
+                {%if item.image %}
+                  <img class="img-fluid news-img" src="{{item.image.url}}" alt="">
+                {% endif %}
+                <p class="news-title">{{item.title}}</p>
+                <div class="news-date">{{item.date}}</div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-12 text-center">
+          <h5>Информация готовится к публикации</h5>
+        </div>
+      {% endif %}
+      <div class="col-12">
+        <a href="{% url 'reference:news-list' %}">Смотреть все новости</a>
+      </div>
+    </div>
+  </div>
+</section>

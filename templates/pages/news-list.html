@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{object.title}}
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+  <section class="news-list">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="main-header">
+            Новости
+          </p>
+        </div>
+        {% if page_obj  %}
+          {% for item in page_obj  %}
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
+                <div class="news-box">
+                  {%if item.image %}
+                    <img class="img-fluid news-img" src="{{item.image.url}}" alt="">
+                  {% endif %}
+                  <p class="news-title">{{item.title}}</p>
+                  <div class="news-date">{{item.date}}</div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-12 text-center">
+            <h5>Информация готовится к публикации</h5>
+          </div>
+        {% endif %}
+        <div class="col-12">
+          <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

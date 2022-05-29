@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{object.title}}
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+  <section class="news-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="news-detail__header">
+            {{object.title}}
+          </p>
+        </div>
+        <div class="col-12">
+          <p class="news-detail__date">
+            {{object.date}}
+          </p>
+        </div>
+        <div class="col-10 my-5">
+          {{object.text | safe}}
+        </div>
+        <div class="col-12 mb-4">
+          {% if object.image %}
+            <img src="{{object.image.url}}" alt="" class="news-detail__img img-fluid">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

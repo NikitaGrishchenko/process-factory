@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 from django.views.generic.detail import DetailView
 
-from .models import OurProjects, QualityLibrary, Site
+from .models import News, OurProjects, QualityLibrary, Site
 
 
 class SiteListView(ListView):
@@ -37,3 +37,13 @@ class OurProjectsDetailView(DetailView):
     model = OurProjects
     template_name = "pages/our-projects-detail.html"
 
+
+class NewsDetailView(DetailView):
+    model = News
+    template_name = "pages/news-detail.html"
+
+
+class NewsListView(ListView):
+    model = News
+    paginate_by = 20
+    template_name = "pages/news-list.html"

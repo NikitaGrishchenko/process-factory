@@ -10,13 +10,13 @@
           </h1>
         </div>
         {% for program in business %}
-          
+
             <div class="col-sm-12 col-md-6 col-lg-4">
               <div class="card-program mb-3">
                 <p class="title-group_programm">
                   {{program.group}}
                 </p>
-                <a href="{% url 'program:detail' pk=program.id %}">
+                <a href="{% url 'business:detail' pk=program.id %}">
                   <div class="container">
                     <div class="row">
                       <div class="col-12">
@@ -27,11 +27,11 @@
                         </div>
                       </div>
                     </div>
-                  </div>        
+                  </div>
                 </a>
               </div>
             </div>
-          
+
         {% endfor %}
       </div>
     </div>

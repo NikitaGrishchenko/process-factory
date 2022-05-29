@@ -1,4 +1,6 @@
 
+from datetime import datetime
+
 from ckeditor.fields import RichTextField
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -86,3 +88,25 @@ class Document(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class News(models.Model):
+    """
+    Новости
+    """
+
+    title = models.CharField(max_length=255, verbose_name=_("Анонс"))
+    image = models.ImageField(null=False, blank=False, verbose_name=_("Фото"))
+    text = RichTextField(verbose_name=_("Текст"))
+    date = models.DateTimeField(
+        default=datetime.now, verbose_name=_("Дата публикации")
+    )
+
+    class Meta:
+        verbose_name = _("Новость")
+        verbose_name_plural = _("Новости")
+
+    def __str__(self):
+        return self.title
+

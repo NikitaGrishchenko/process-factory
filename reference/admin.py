@@ -1,10 +1,16 @@
 from django.contrib import admin
 
-from .models import Document, OurProjects, QualityLibrary, Site
+from .models import Document, OurProjects, QualityLibrary, Site, News
 
 
 @admin.register(Site)
 class SiteAdmin(admin.ModelAdmin):
+    list_display = (
+        "title",
+    )
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
     list_display = (
         "title",
     )

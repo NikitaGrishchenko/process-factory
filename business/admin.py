@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import BusinessGames, Group, UserBusinessGames
+from .models import (BusinessGames, FeedbackUserBusinessGames, Group,
+                     UserBusinessGames)
 
 
 class BusinessGamesInline(admin.TabularInline):
@@ -21,3 +22,8 @@ class UserBusinessGamesAdmin(admin.ModelAdmin):
         "business_games",
         "user",
     )
+
+
+@admin.register(FeedbackUserBusinessGames)
+class FeedbackUserBusinessGamesAdmin(admin.ModelAdmin):
+    pass

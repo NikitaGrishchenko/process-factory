@@ -46,6 +46,54 @@
           <p class="count-users">Всего участников: {{count_users}}</p>
           </div>
         </div>
+              {% comment %} =============== {% endcomment %}
+      <div class="col-12 my-4">
+        <h3>Оставить отзыв</h3>
+      </div>
+      {% if user.is_authenticated %}
+        <div class="col-12">
+          <form action="{% url 'business:send-feedback' pk=object.id %}" method="POST">
+            {% csrf_token %}
+            <p>Комментарий</p>
+            <textarea  class="form-control w-75" rows="5" cols="45" name="text" maxlength="300" required
+            ></textarea>
+            <input class="btn mt-3" type="submit" value="Отправить">
+          </form>
+        </div>
+      {% else %}
+        <div class="col-12">
+          <a href="{% url 'login' %}">Авторизируйтесь</a>, чтобы оставлять отзывы
+        </div>
+      {% endif %}
+      <div class="col-12">
+        <h3>Отзывы</h3>
+      </div>
+      {% if feedbacks|length == 0 %}
+          <div class="col-12 mb-5">
+            <p>
+              Отзывов еще нет
+            </p>
+          </div>
+        {% else %}
+          {% for feedback in feedbacks %}
+            <div class="col-12">
+              <div class="feedback-box">
+                <div class="d-flex align-items-center">
+                  <p>
+                    <strong>{{feedback.user.first_name}} {{feedback.user.last_name}}</strong>
+                  </p>
+                  <p class="feedback-box__date">
+                    {{ feedback.date_created|date:"d.m.Y H:i" }}
+                  </p>
+                </div>
+                <p class="my-2  ">
+                  {{feedback.text}}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% comment %} ======= {% endcomment %}
       </div>
     </div>
   </section>
