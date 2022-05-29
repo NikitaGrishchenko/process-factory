@@ -50,7 +50,7 @@
               <div class="activity__title mt-2">
                 {% for program in user_educational_programs %}
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <a href="{% url 'program:detail' pk=program.id %}">
+                  <a href="{% url 'program:detail' pk=program.educational_program.id %}">
                     {{program.educational_program.title}}
                   </a>
                 </div>
@@ -73,7 +73,7 @@
               <div class="activity__title mt-2">
                 {% for program in user_business_games %}
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <a href="{% url 'business:detail' pk=program.id %}">
+                  <a href="{% url 'business:detail' pk=program.business_games.id %}">
                     {{program.business_games.title}}
                   </a>
                 </div>

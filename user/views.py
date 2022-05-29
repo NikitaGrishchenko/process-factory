@@ -1,12 +1,12 @@
+from business.models import UserBusinessGames
 from django.contrib.auth import get_user_model
 from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import FormView, ListView, TemplateView
 from django.views.generic.detail import DetailView
 from program.models import UserEducationalProgram
-from business.models import UserBusinessGames
 
-from .forms import UserRegistrationForm, QuestionsFromGuestsForm
+from .forms import QuestionsFromGuestsForm, UserRegistrationForm
 from .models import Employee
 
 User = get_user_model()
