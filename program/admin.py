@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import EducationalProgram, Group, UserEducationalProgram
+from .models import (EducationalProgram, FeedbackToEducationalProgram, Group,
+                     UserEducationalProgram)
 
 
 class EducationalProgramInline(admin.TabularInline):
@@ -21,3 +22,8 @@ class UserEducationalProgramAdmin(admin.ModelAdmin):
         "educational_program",
         "user",
     )
+
+
+@admin.register(FeedbackToEducationalProgram)
+class FeedbackToEducationalProgramAdmin(admin.ModelAdmin):
+    pass

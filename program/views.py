@@ -1,10 +1,12 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
-from .models import EducationalProgram, UserEducationalProgram
+from .forms import FeedbackToEducationalProgramForm
+from .models import (EducationalProgram, FeedbackToEducationalProgram,
+                     UserEducationalProgram)
 
 
 class EducationalProgramDetailView(DetailView):
@@ -29,6 +31,8 @@ class EducationalProgramDetailView(DetailView):
         except UserEducationalProgram.DoesNotExist:
             context['is_user_in_program'] = False
 
+        context['feedbacks'] = FeedbackToEducationalProgram.objects.filter(educational_program_id=self.kwargs['pk']).order_by('-date_created')
+
         return context
 
 def registration_to_program(request, pk):
@@ -42,3 +46,26 @@ def registration_to_program(request, pk):
     )
     user_educational_program.save()
     return HttpResponseRedirect(reverse('user:success'))
+
+
+
+def send_feedback(request, pk):
+    """
+    Отправка отзыва
+    """
+    if request.method == 'POST':
+        form = FeedbackToEducationalProgramForm(request.POST)
+        if form.is_valid():
+
+            try:
+                educational_program = EducationalProgram.objects.get(id=pk)
+            except EducationalProgram.DoesNotExist:
+                return EducationalProgram('user:error')
+
+            feedback = FeedbackToEducationalProgram(
+                user=request.user,
+                educational_program=educational_program,
+                text=form.cleaned_data['text'],
+            )
+            feedback.save()
+        return redirect('program:detail', pk=pk)

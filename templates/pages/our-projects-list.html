@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Наши проекты
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<section class="our-projects-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">
+          Наши проекты
+        </h1>
+      </div>
+      {% if object_list|length == 0%}
+      <div class="col-12">
+        <h1>Ничего нет</h1>
+      </div>
+      {% endif %}
+      {% for object in object_list %}
+          <div class="col-4">
+            <div>
+              <a href="{% url 'reference:our-projects-detail' pk=object.id %}">
+                <p>
+                  {{object.title}}
+                </p>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock content %}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}

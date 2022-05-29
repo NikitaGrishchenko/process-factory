@@ -36,13 +36,9 @@ class EducationalProgram(models.Model):
     )
     description = RichTextField(verbose_name=_("Описание"))
 
-
-
     class Meta:
         verbose_name = _("Образовательная программа")
         verbose_name_plural = _("Образовательная программа")
-
-
 
     def __str__(self):
         return self.title
@@ -71,3 +67,22 @@ class UserEducationalProgram(models.Model):
 
     def __str__(self):
         return f"{self.user} {self.educational_program}"
+
+
+
+class FeedbackToEducationalProgram(models.Model):
+    """
+    Отзыв к ткани Образовательная программа
+    """
+
+    user = models.ForeignKey(User, verbose_name=_("Пользователь"), on_delete=models.CASCADE)
+    educational_program = models.ForeignKey(EducationalProgram, verbose_name=_("Образовательная программа"), on_delete=models.CASCADE)
+    date_created = models.DateTimeField(_("Дата создания"), default=timezone.now)
+    text = models.CharField(_("Текст"), max_length=300)
+
+    class Meta:
+        verbose_name = _("Отзыв")
+        verbose_name_plural = _("Отзывы")
+
+    def __str__(self):
+        return f"Отзыв {self.user} к {self.educational_program}"

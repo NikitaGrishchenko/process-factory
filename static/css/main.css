@@ -13,7 +13,9 @@ body {
 .release-detail,
 .site-list,
 .quality-library-list,
-.useful-materials {
+.useful-materials,
+.our-projects-list,
+.our-projects-detail {
   padding-top: 80px;
 }
 
@@ -267,7 +269,7 @@ select {
   background: rgb(204, 200, 200);
   border-radius: 10px;
   text-align: justify;
-  
+
 }
 
 .card-program a{
@@ -281,7 +283,7 @@ select {
   padding: 5px 10px;
   border-radius: 5px;
   color: rgb(48, 120, 202)
-  
+
 }
 
 
@@ -360,16 +362,16 @@ select {
   font-weight: 700;
   font-size: 70px;
   color: rgba(36, 100, 172, 1);
-  
+
 }
 
 .main__title {
-  
+
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6);
   position: relative;
   top: 300px;
   text-transform: uppercase;
-  
+
 }
 
 
@@ -430,18 +432,18 @@ footer {
   background-color: rgba(222, 214, 212, 1);
   /* background: url(/static/images/bg_footer.jpg) no-repeat; */
   height: 204px;
-  
+
 }
 
 .footer__title {
   padding: 0 0 10px 0;
   font-weight: 700;
   font-size: 16px;
-  
+
 }
 
 .list__links a {
-  
+
   color: #000;
   padding: 0 0 10px 0;
 }
@@ -543,7 +545,7 @@ footer {
 
 .date{
   color: rgb(134, 126, 126);
-  
+
 }
 
 
@@ -566,29 +568,29 @@ footer {
 
 
 @media screen and (max-width: 1120px) {
-  
+
   /* Header */
 
   .header h1 {
     font-size: 70px;
     margin-bottom: 10px;
   }
-  
+
   .main__title {
     text-align: center;
     top: 350px;
   }
-  
+
   .main__title h2 {
     font-size: 50px;
-  
+
   }
 
 }
 
 @media screen and (max-width: 992px) {
 
-  
+
   /* Program and Bussines */
 
   .title-group_programm{
@@ -598,7 +600,7 @@ footer {
   .cont-title{
     font-size: 14px;
   }
-  
+
 
   /* Footer */
 
@@ -606,7 +608,7 @@ footer {
     margin: 0;
     text-align: center;
   }
-  
+
 }
 
 @media screen and (max-width: 768px) {
@@ -655,7 +657,7 @@ footer {
     margin: 0px auto 15px auto;
 
   }
-  
+
 }
 
 
@@ -668,36 +670,36 @@ footer {
   .partners{
     display: none;
   }
-  
-  
+
+
 }
 
 @media screen and (max-width: 512px) {
-  
+
   /* Header */
 
   .header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
   }
-  
+
   .main__title {
     text-align: center;
     top: 100px;
   }
-  
+
   .main__title h2 {
     font-size: 2rem;
-  } 
+  }
 
-  
+
 
 }
 
 @media screen and (max-width: 320px) {
 
-  
-  
-  
-  
+
+
+
+
 }
