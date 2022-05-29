@@ -30,7 +30,7 @@ class BusinessGamesDetailView(DetailView):
         except UserBusinessGames.DoesNotExist:
             context['is_user_in_program'] = False
 
-        context['feedbacks'] = FeedbackUserBusinessGames.objects.filter(user_business_games_id=self.kwargs['pk']).order_by('-date_created')
+        context['feedbacks'] = FeedbackUserBusinessGames.objects.filter(business_games_id=self.kwargs['pk']).order_by('-date_created')
 
         return context
 
@@ -56,14 +56,20 @@ def send_feedback(request, pk):
         if form.is_valid():
 
             try:
-                user_business_games = UserBusinessGames.objects.get(id=pk)
-            except UserBusinessGames.DoesNotExist:
+                business_games = BusinessGames.objects.get(id=pk)
+            except BusinessGames.DoesNotExist:
                 return redirect('user:error')
 
             feedback = FeedbackUserBusinessGames(
                 user=request.user,
-                user_business_games=user_business_games,
+                business_games=business_games,
                 text=form.cleaned_data['text'],
             )
             feedback.save()
         return redirect('business:detail', pk=pk)
+
+
+class BusinessGamesListView(ListView):
+    model = BusinessGames
+    paginate_by = 20
+    template_name = "pages/business-games-list.html"

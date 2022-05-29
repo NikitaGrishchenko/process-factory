@@ -69,3 +69,10 @@ def send_feedback(request, pk):
             )
             feedback.save()
         return redirect('program:detail', pk=pk)
+
+
+
+class EducationalProgramListView(ListView):
+    model = EducationalProgram
+    paginate_by = 20
+    template_name = "pages/educational-program-list.html"

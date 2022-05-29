@@ -17,7 +17,9 @@ body {
 .our-projects-list,
 .our-projects-detail,
 .news-detail,
-.news-list {
+.news-list,
+.educational-program-list,
+.business-games-list {
   padding-top: 80px;
 }
 

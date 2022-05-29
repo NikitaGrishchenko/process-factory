@@ -6,7 +6,7 @@
           Наши активности
         </h1>
       </div>
-      
+
         <div class="col-sm-12 col-md 6 col-lg-4">
           <div class="container">
             <div class="row d-dlex justify-content-center">
@@ -24,8 +24,14 @@
             </div>
           </div>
         </div>
-        
-      
+        <div class="col-4">
+          <a href="{% url 'business:list' %}">Деловые игры</a>
+        </div>
+        <div class="col-4">
+          <a href="{% url 'program:list' %}">Образовательные программы</a>
+        </div>
+
+
     </div>
   </div>
 </section>

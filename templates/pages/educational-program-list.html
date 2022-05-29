@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Образовательные программы
+{% endblock title %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+  <section class="educational-program-list">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="main-header">
+            Образовательные программы
+          </p>
+        </div>
+        {% if page_obj %}
+          {% for program in page_obj %}
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card-program mb-3">
+                    <p class="title-group_programm text-center">
+                      {{program.group}}
+                    </p>
+
+                  <a href="{% url 'program:detail' pk=program.id %}">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="cont-title mb-3">
+                            <p>
+                              {{program.title}}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+          {% endfor %}
+          <div class="col-12">
+            <div class="pagination">
+              <span class="step-links">
+                  {% if page_obj.has_previous %}
+                      <a href="?page=1">&laquo; first</a>
+                      <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                  {% endif %}
+
+                  <span class="current">
+                      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                  </span>
+
+                  {% if page_obj.has_next %}
+                      <a href="?page={{ page_obj.next_page_number }}">next</a>
+                      <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                  {% endif %}
+              </span>
+          </div>
+          </div>
+        {% else %}
+          <div class="col-12">
+            Ничего нет
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block footer %}
+  {% include 'include/footer.html' %}
+{% endblock footer %}
