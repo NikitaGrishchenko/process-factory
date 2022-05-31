@@ -3,7 +3,7 @@
 {% if business|length > 0%}
   <section class="last-programs">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-12">
           <h1 class="title">
             Деловые игры
@@ -11,8 +11,8 @@
         </div>
         {% for program in business %}
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
-              <div class="card-program mb-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+              <div class="card-program">
                 <p class="title-group_programm">
                   {{program.group}}
                 </p>

@@ -1,8 +1,8 @@
 {% load static %}
 
-<section class="news">
+<section class="news" id="news">
   <div class="container">
-    <div class="row d-flex">
+    <div class="row d-flex justify-content-center">
       <div class="col-12 text-center">
         <p class="title">
           Новости
@@ -10,7 +10,7 @@
       </div>
       {% if news %}
         {% for item in news %}
-          <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-3">
             <div class="cont-news">
               <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
                 <div class="content_news">
@@ -20,7 +20,7 @@
                     {% endif %}
                     <p class="news-title">{{item.title}}</p>
                   </div>
-                  <div class="cont-date"><p>Публикация от: {{ item.date|date:"d.m.y g:i" }}</p></div>
+                  <div class="cont-date text-justify"><p>Публикация от: {{ item.date|date:"d.m.y g:i" }}</p></div>
                 </div>
               </a>
             </div>

@@ -80,13 +80,13 @@
             <div class="col-12">
               <div class="feedback-box d-flex">
                 <div class="feedback-img">
-                  <img src="/static/images/profile (1).png" alt="">
+                  <img src="{% static 'images/profile.png' %}" alt="">
                 </div>
                 <div class="feedback-profile">
                   <p>
                     <strong>{{feedback.user.first_name}} {{feedback.user.last_name}}</strong>
                   </p>
-                  <p class="feedback-text">
+                  <p class="feedback-text text-justify">
                     {{feedback.text}}
                   </p>
                 </div>

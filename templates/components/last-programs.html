@@ -3,7 +3,7 @@
 {% if programs|length > 0%}
   <section class="last-programs">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-12">
           <h1 class="title">
             Образовательные программы
@@ -11,7 +11,7 @@
         </div>
         {% for program in programs %}
           
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
               <div class="card-program mb-3">
                   <p class="title-group_programm text-center">
                     {{program.group}}

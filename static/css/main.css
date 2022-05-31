@@ -205,7 +205,7 @@ select {
   border-radius: 15px;
 }
 
-.flip-card-front img{
+.flip-card-front img {
   border-radius: 15px 15px 0 0;
 }
 
@@ -228,7 +228,7 @@ select {
   border-radius: 15px;
 }
 
-.btn a{
+.btn a {
   text-decoration: none;
 }
 
@@ -249,51 +249,58 @@ select {
   text-align: justify;
 }
 
-.about-img{
+.about-img {
   padding-bottom: 15px;
 }
 
 .about__content {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 30px 0;
-  padding: 0;
+  margin: 0 0 10px 0;
+
 }
 
 
 /* News */
 
-.news-box{
-  display: flex;
-  flex: 1 1 auto;
-}
 
 
-.news-title{
-  margin: 10px 0 10px 0;
+.news-title {
+  margin: 10px 0 15px 0;
   text-align: justify;
+  min-height: 105px;
+  
 }
 
-.cont-date{
-  text-align: right;
+.cont-date {
+  position: absolute;
+  bottom: 0px;
+  
   color: rgb(138, 137, 137);
 }
 
 
+
+.cont-news {
+  position: relative;
+  height: 100%;
+}
+
 .cont-news a{
+  margin-left: auto;
   text-decoration: none;
 }
 
 
 /* News detail page */
 
-.detail-content{
+.detail-content {
   font-size: 18px;
   line-height: 35px;
   text-align: justify;
 }
 
-.pagination span{
+.pagination span {
   text-align: center;
 }
 
@@ -313,31 +320,30 @@ select {
   background: rgb(204, 200, 200);
   border-radius: 10px;
   text-align: justify;
-  height: 100% ;
+  height: 100%;
 }
 
-.card-program a{
+.card-program a {
   text-decoration: none;
   color: rgb(84, 141, 192);
 }
 
 /* Business game on index page */
-.cont-title{
+.cont-title {
   background-color: rgb(233, 229, 229);
   padding: 5px 10px;
   border-radius: 5px;
   color: rgb(48, 120, 202)
-
 }
 
 
 /* Education programm detail */
 
-.card-content{
- margin: 0 15px 15px 15px;
+.card-content {
+  margin: 0 15px 15px 15px;
 }
 
-.title-group_programm{
+.title-group_programm {
   color: rgba(141, 141, 141, 0.733);
   font-size: 22px;
   text-align: center;
@@ -345,60 +351,61 @@ select {
   padding: 10px 10px;
 }
 
-.programm-desc{
+.programm-desc {
   font-size: 18px;
   line-height: 35px;
   text-align: justify;
 }
 
-.users-count-btn{
+.users-count-btn {
   padding-top: 25px;
 
 }
 
-.count-users{
+.count-users {
   padding-top: 10px;
 }
 
 /* Projects */
 
-.desc-project{
+.desc-project {
   line-height: 30px;
   text-align: justify;
   margin-bottom: 20px;
 }
 
-.date-project{
+.date-project {
   margin-bottom: 15px;
 }
+
 /* Feedback */
 
-h3{
+h3 {
   margin: 25px 0;
 }
 
-.feedback-box{
+.feedback-box {
   margin-bottom: 15px;
   padding: 10px 15px;
   background-color: rgb(221, 212, 212);
   border-radius: 10px;
 }
 
-.feedback-box__date{
+.feedback-box__date {
   margin-left: auto;
   min-width: 150px;
 }
 
-.feedback-img img{
+.feedback-img img {
   max-width: 100px;
 
 }
 
-.feedback-profile{
+.feedback-profile {
   margin: 0 20px 0 15px;
 }
 
-.feedback-text{
+.feedback-text {
   margin-top: 10px;
   text-align: justify;
   line-height: 25px;
@@ -408,7 +415,7 @@ h3{
 
 /* Activities */
 
-.img-activity{
+.img-activity {
   width: auto;
   height: auto;
 }
@@ -482,7 +489,7 @@ h3{
 
 }
 
-video{
+video {
   width: 100%;
   height: auto;
   max-height: 100%;
@@ -513,8 +520,12 @@ video{
 
 /* Navbar */
 
-.dropdown{
+.dropdown {
   padding: 15px 0 10px 20px;
+}
+
+.nav-item {
+  padding-left: 30px;
 }
 
 
@@ -551,10 +562,11 @@ footer {
 .footer-logo {
   width: 20%;
   display: block;
-  margin: 0 auto;width: 5rem;
+  margin: 0 auto;
+  width: 5rem;
 }
 
-.footer__info{
+.footer__info {
   margin-left: 80px;
 }
 
@@ -591,7 +603,7 @@ footer {
   border-width: 3px;
 }
 
-.card-lc{
+.card-lc {
   width: 100%;
   margin: 10px 0;
   background-color: rgb(235, 235, 235);
@@ -619,18 +631,18 @@ footer {
 
 /* Logout */
 
-.login-out__logo{
+.login-out__logo {
   width: 30%;
   display: inline-block;
   margin: 25px 0;
 }
 
 /* Card activity */
-.cont-activity img{
+.cont-activity img {
   border-radius: 20px;
 }
 
-.title-activity a{
+.title-activity a {
   position: relative;
   bottom: 80px;
   left: 40px;
@@ -642,21 +654,21 @@ footer {
 
 /* Materials */
 
-.useful-materials{
+.useful-materials {
   overflow-x: hidden;
 }
 
 /* release */
 
-.card-release a{
+.card-release a {
   text-decoration: none;
 }
 
-.cont-title span{
+.cont-title span {
   text-align: right;
 }
 
-.date{
+.date {
   color: rgb(134, 126, 126);
 
 }
@@ -664,7 +676,7 @@ footer {
 
 /* Partners */
 
-.parthers-area__title{
+.parthers-area__title {
   display: flex;
   justify-content: center;
 }
@@ -681,6 +693,10 @@ footer {
 
 
 @media screen and (max-width: 1120px) {
+
+  /* Navbar */
+
+
 
   /* Header */
 
@@ -699,25 +715,61 @@ footer {
 
   }
 
+
+  .fitcha {
+    
+    min-height: 155px;
+    
+  }
+
 }
 
 @media screen and (max-width: 992px) {
 
+  /* Navbar */
+  nav {
+    text-align: center;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
 
   /* Program and Bussines */
 
-  .title-group_programm{
+  .title-group_programm {
     font-size: 16.5px;
   }
 
-  .cont-title{
+  .cont-title {
     font-size: 14px;
   }
 
 
+  .title-activity a {
+    font-size: 16px;
+
+  }
+
+  .news-title {
+    
+    min-height: 155px;
+    
+  }
+  .fitcha {
+    
+    min-height: 100px;
+    
+  }
+
+  .cont-date p {
+    font-size: 14px;
+  }
+  
+
   /* Footer */
 
-  .footer__info{
+  .footer__info {
     margin: 0;
     text-align: center;
   }
@@ -728,44 +780,55 @@ footer {
 
   /* Card program and bussines */
 
-  .title-group_programm{
+  .title-group_programm {
     font-size: 16px;
   }
 
-  .cont-title{
+  .cont-title {
     font-size: 14px;
   }
 
   /* Employee */
 
-  .cont-employee{
+  .cont-employee {
     text-align: center;
   }
-  .flip-card{
+
+  .flip-card {
     display: inline-block;
   }
 
+  .title-activity a {
+    font-size: 18px;
+
+  }
+
+  .news-title {
+    min-height: 120px;
+    
+  }
 
   /* Footer */
 
-  .footer{
+  .footer {
     display: block;
     flex-grow: 0;
     width: 100%;
     height: auto;
   }
 
-  .footer-logo{
+  .footer-logo {
     display: block;
     margin: 0px auto 15px auto;
 
   }
-  .footer__info{
+
+  .footer__info {
     text-align: center;
     margin-bottom: 20px;
   }
 
-  .footer-logo{
+  .footer-logo {
     display: block;
     margin: 0px auto 15px auto;
 
@@ -776,14 +839,24 @@ footer {
 
 @media screen and (max-width: 576px) {
 
-.title{
-  font-size: 28px;
-}
+  .title {
+    font-size: 28px;
+  }
 
-  .partners{
+  .partners {
     display: none;
   }
 
+  .news-title {
+    min-height: 70px;
+    
+  }
+
+  .fitcha {
+    
+    min-height: 90px;
+    
+  }
 
 }
 
@@ -810,9 +883,8 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
-
-
-
-
-
+  .news-title {
+    min-height: 90px;
+    
+  }
 }

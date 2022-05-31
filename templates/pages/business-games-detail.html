@@ -81,13 +81,13 @@
             <div class="col-12">
               <div class="feedback-box d-flex align-items-center justify-content-between">
                 <div class="feedback-img">
-                  <img src="/static/images/profile (1).png" alt="">
+                  <img src="{% static 'images/profile.png' %}" alt="">
                 </div>
                 <div class="feedback-profile">
                   <p>
                     <strong>{{feedback.user.first_name}} {{feedback.user.last_name}}</strong>
                   </p>
-                  <p class="my-2  ">
+                  <p class="my-2 text-justify">
                     {{feedback.text}}
                   </p>
                 </div>

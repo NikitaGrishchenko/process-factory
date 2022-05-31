@@ -15,7 +15,8 @@
             Главная
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="https://rsue.ru/tour/tour.html">3D - тур</a>
+            <a class="dropdown-item" target="_blank" href="https://rsue.ru/tour/tour.html">3D - тур</a>
+            <a class="dropdown-item" href="#news">Новости</a>
             <a class="dropdown-item" href="#employee">Наши сотруднки</a>
             <a class="dropdown-item" href="#partners">Наши потребители</a>
             <a class="dropdown-item" href="#partners">Наши партнеры</a>
@@ -26,9 +27,9 @@
             Наши услуги
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Тематические выпуски</a>
-            <a class="dropdown-item" href="#">Деловые игры</a>
-            <a class="dropdown-item" href="#">Образовательные программы</a>
+            <a class="dropdown-item" href="{% url 'release:list' %}">Тематические выпуски</a>
+            <a class="dropdown-item" href="{% url 'business:list' %}">Деловые игры</a>
+            <a class="dropdown-item" href="{% url 'program:list' %}">Образовательные программы</a>
           </div>
         </div>
         <div class="dropdown">
@@ -40,24 +41,14 @@
           </div>
         </div>
 
-        {% comment %} <li class="nav-item">
-          <a class="nav-link" href="{% url 'reference:news-list'  %}">Новости</a>
-        </li> {% endcomment %}
-
-        {% comment %} {% if not user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="#questions-from-guests-form">Задать вопрос</a>
-          </li>
-        {% endif %} {% endcomment %}
-
         {% if not user.is_authenticated %}
-          <li class="nav-item lc">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'user:registration' %}">Регистрация</a>
           </li>
         {% endif %}
         {% if user.is_authenticated %}
-          <li class="nav-item lc">
-            <a class="nav-link" href="{% url 'user:account' %}"> <img src="/static/images/login.png" alt="lc"></a>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'user:account' %}"> <img src="{% static 'images/account.png' %}" alt="lc"></a>
           </li>
         {% endif %}
       </ul>
