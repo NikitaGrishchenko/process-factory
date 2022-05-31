@@ -13,23 +13,23 @@
   <section class="news-detail">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <p class="news-detail__header">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <p class="title">
             {{object.title}}
           </p>
         </div>
-        <div class="col-12">
-          <p class="news-detail__date">
-            {{object.date}}
-          </p>
+        <div class="col-sm-12 col-md-12 col-lg-12 my-4">
+          <div class="detail-content">
+            <p>{{object.text | safe}}</p>
+          </div>
         </div>
-        <div class="col-10 my-5">
-          {{object.text | safe}}
-        </div>
-        <div class="col-12 mb-4">
+        <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
           {% if object.image %}
             <img src="{{object.image.url}}" alt="" class="news-detail__img img-fluid">
           {% endif %}
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 text-right">
+          <div class="cont-date"><p>Публикация от: {{ object.date|date:"d.m.y g:i" }}</p></div>
         </div>
       </div>
     </div>

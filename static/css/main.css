@@ -228,6 +228,10 @@ select {
   border-radius: 15px;
 }
 
+.btn a{
+  text-decoration: none;
+}
+
 /* About-us */
 
 .title {
@@ -235,7 +239,7 @@ select {
   font-size: 32px;
   text-align: center;
   font-weight: 700;
-  margin: 30px 0 15px 0;
+  margin: 25px 0 10px 0;
 }
 
 .about__desc {
@@ -257,6 +261,41 @@ select {
 }
 
 
+/* News */
+
+.news-box{
+  display: flex;
+  flex: 1 1 auto;
+}
+
+
+.news-title{
+  margin: 10px 0 10px 0;
+  text-align: justify;
+}
+
+.cont-date{
+  text-align: right;
+  color: rgb(138, 137, 137);
+}
+
+
+.cont-news a{
+  text-decoration: none;
+}
+
+
+/* News detail page */
+
+.detail-content{
+  font-size: 18px;
+  line-height: 35px;
+  text-align: justify;
+}
+
+.pagination span{
+  text-align: center;
+}
 
 
 /* Education programm on index page */
@@ -273,7 +312,6 @@ select {
   background: rgb(204, 200, 200);
   border-radius: 10px;
   text-align: justify;
-
 }
 
 .card-program a{
@@ -308,14 +346,65 @@ select {
 }
 
 .users-count-btn{
-  margin-top: 15%;
-  margin-left: 20%;
+  padding-top: 25px;
+  
 }
 
 .count-users{
-  padding-top: 5%;
+  padding-top: 10px;
 }
 
+/* Projects */
+
+.desc-project{
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.date-project{
+  margin-bottom: 15px;
+}
+/* Feedback */
+
+h3{
+  margin: 25px 0;
+}
+
+.feedback-box{
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background-color: rgb(221, 212, 212);
+  border-radius: 10px;
+}
+
+.feedback-box__date{
+  margin-left: auto;
+}
+
+.feedback-img{
+  
+  
+}
+
+.feedback-profile{
+  margin: 0 20px 0 15px;
+}
+
+.feedback-text{
+  margin-top: 10px;
+  text-align: justify;
+  line-height: 25px;
+}
+
+
+
+/* Activities */
+
+.img-activity{
+  width: auto;
+  height: auto;
+}
 
 /* Contacts */
 
@@ -495,6 +584,15 @@ footer {
   border-width: 3px;
 }
 
+.card-lc{
+  width: 100%;
+  margin: 10px 0;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+}
+
+
+
 .lc_subtitle {
   color: rgb(110, 110, 110);
   padding: 5px 0 0 0;
@@ -543,13 +641,17 @@ footer {
 
 /* release */
 
-.card-release span{
+.card-release a{
+  text-decoration: none;
+}
+
+.cont-title span{
   text-align: right;
 }
 
 .date{
   color: rgb(134, 126, 126);
-
+  
 }
 
 

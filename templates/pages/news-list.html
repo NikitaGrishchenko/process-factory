@@ -14,30 +14,32 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <p class="main-header">
+          <p class="title">
             Новости
           </p>
         </div>
         {% if page_obj  %}
           {% for item in page_obj  %}
             <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-              <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
-                <div class="news-box">
-                  {%if item.image %}
-                    <img class="img-fluid news-img" src="{{item.image.url}}" alt="">
-                  {% endif %}
-                  <p class="news-title">{{item.title}}</p>
-                  <div class="news-date">{{item.date}}</div>
-                </div>
-              </a>
+              <div class="cont-news mb-3">
+                <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
+                  <div class="news-box">
+                    {%if item.image %}
+                      <img width="auto" height="100%" class="img-fluid news-img" src="{{item.image.url}}" alt="">
+                    {% endif %}
+                    <p class="news-title">{{item.title}}</p>
+                    <div class="cont-date"><p>Публикация от: {{ item.date|date:"d.m.y H:i" }}</p></div>
+                  </div>
+                </a>
+              </div>
             </div>
           {% endfor %}
         {% else %}
-          <div class="col-12 text-center">
+          <div class="col-sm-12 col-md-12 col-lg-12 text-center">
             <h5>Информация готовится к публикации</h5>
           </div>
         {% endif %}
-        <div class="col-12">
+        <div class="col-sm-12 col-md-12 col-lg-12">
           <div class="pagination">
             <span class="step-links">
                 {% if page_obj.has_previous %}
@@ -46,12 +48,12 @@
                 {% endif %}
 
                 <span class="current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
                 </span>
 
                 {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">next</a>
-                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Предыдущая &raquo;</a>
                 {% endif %}
             </span>
         </div>

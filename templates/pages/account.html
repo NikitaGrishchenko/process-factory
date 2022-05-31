@@ -31,15 +31,40 @@
           </div>
         </div>
 
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
           <div class="user__info">
             <p>Телефон: {{user.phone}}</p>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        {% if user_educational_programs|length > 0 %}
+        {% comment %} {% if user_educational_programs|length > 0 %} {% endcomment %}
+        <div class="card-lc">  
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <h2 class="lc_subtitle">
+              Мои сертификаты
+            </h2>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+              <div class="activity__title mt-2 mb-1">
+                {% comment %} {% for program in user_educational_programs %} {% endcomment %}
+                <div class="col-sm-12 col-md-12 col-lg-12 pb-2">
+                  {% comment %} <a href="{% url 'program:detail' pk=program.educational_program.id %}">
+                    {{program.educational_program.title}}
+                  </a> {% endcomment %}
+                </div>
+              {% comment %} {% endfor %} {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% comment %} {% endif %} {% endcomment %}
+      
+
+
+      {% if user_educational_programs|length > 0 %}
+        <div class="card-lc">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <h2 class="lc_subtitle">
               Мои образовательные программы
@@ -47,9 +72,9 @@
           </div>
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
-              <div class="activity__title mt-2">
+              <div class="activity__title mt-2 mb-1">
                 {% for program in user_educational_programs %}
-                <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="col-sm-12 col-md-12 col-lg-12 pb-2">
                   <a href="{% url 'program:detail' pk=program.educational_program.id %}">
                     {{program.educational_program.title}}
                   </a>
@@ -58,11 +83,14 @@
               </div>
             </div>
           </div>
+        </div>
+          
         {% endif %}
-      </div>
 
-      <div class="row">
+
+
         {% if user_business_games|length > 0 %}
+        <div class="card-lc">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <h2 class="lc_subtitle">
               Мои деловые игры
@@ -70,19 +98,23 @@
           </div>
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
-              <div class="activity__title mt-2">
+              <div class="activity__title mt-2 mb-1">
                 {% for program in user_business_games %}
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                  <a href="{% url 'business:detail' pk=program.business_games.id %}">
-                    {{program.business_games.title}}
-                  </a>
-                </div>
-              {% endfor %}
+                  <div class="col-sm-12 col-md-12 col-lg-12 pb-2">
+                   <div class="cont-card_lc">
+                     <a href="{% url 'business:detail' pk=program.business_games.id %}">
+                       {{program.business_games.title}}
+                      </a>
+                    </div>
+                  </div>
+                {% endfor %}
               </div>
             </div>
           </div>
+        </div>
         {% endif %}
-      </div>
+        
+      
     </div>
   </section>
 {% endblock content %}

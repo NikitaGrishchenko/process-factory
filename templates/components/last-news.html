@@ -2,31 +2,42 @@
 
 <section class="news">
   <div class="container">
-    <div class="row">
+    <div class="row d-flex">
       <div class="col-12 text-center">
-        <p class="main-header">
+        <p class="title">
           Новости
         </p>
       </div>
       {% if news %}
         {% for item in news %}
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
-              <div class="news-box">
-                {%if item.image %}
-                  <img class="img-fluid news-img" src="{{item.image.url}}" alt="">
-                {% endif %}
-                <p class="news-title">{{item.title}}</p>
-                <div class="news-date">{{item.date}}</div>
-              </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="cont-news">
+              <a href="{% url 'reference:news-detail' pk=item.pk %}" class="news-link">
+                <div class="content_news">
+                  <div class="main-content_news">
+                    {%if item.image %}
+                    <img class="img-fluid news-img" src="{{item.image.url}}" alt="">
+                    {% endif %}
+                    <p class="news-title">{{item.title}}</p>
+                  </div>
+                  <div class="cont-date"><p>Публикация от: {{ item.date|date:"d.m.y g:i" }}</p></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+        {% endfor %}
+        <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
+          <div class="btn-news text-center">
+            <a href="{% url 'reference:news-list' %}">
+              <button class="btn">
+                <p>Смотреть все новости</p>
+              </button>
             </a>
           </div>
-          <div class="col-12">
-            <a href="{% url 'reference:news-list' %}">Смотреть все новости</a>
-          </div>
-        {% endfor %}
+        </div>
       {% else %}
-        <div class="col-12 text-center">
+        <div class="col-sm-12 col-md-12 col-lg-12 mb-4 text-center">
           <h5>Информация готовится к публикации</h5>
         </div>
       {% endif %}

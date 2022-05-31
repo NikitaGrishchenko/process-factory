@@ -24,13 +24,15 @@
       </div>
       {% endif %}
       {% for program in object_list %}
-          <div class="col-4">
+          <div class="col-4  mb-3">
             <div class="card-release">
               <a href="{% url 'release:detail' pk=program.id %}">
-                <p class="cont-title">
-                  {{program.title}}
-                  <span class="date">{{program.date_of_event}}</span>
-                </p>
+                <div class="cont-title">
+                  <p>
+                    {{program.title}}
+                  </p>
+                  <p class="date">Дата проведения: {{program.date_of_event|date:'d.m.y'}}</p>
+                </div>
               </a>
             </div>
           </div>

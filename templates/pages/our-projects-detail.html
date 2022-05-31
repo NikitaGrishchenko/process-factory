@@ -14,32 +14,39 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>
+        <h1 class="title">
           {{object.title}}
         </h1>
       </div>
-      {% if object.date_of_the_event %}
-        <div class="col-12">
-          Дата проведения: {{object.date_of_the_event}}
-        </div>
-      {% endif %}
+      
       {% if object.description %}
         <div class="col-12">
-          {{object.description | safe}}
+          <div class="desc-project">
+            {{object.description | safe}}
+          </div>
+        </div>
+      {% endif %}
+      {% if object.date_of_the_event %}
+        <div class="col-12 text-right">
+          <div class="date-project">
+            <p>Дата проведения: {{object.date_of_the_event|date:"d.m.y g:i"}}</p>
+          </div>
         </div>
       {% endif %}
       {% if object.image_before %}
         <div class="col-6">
+          <h2 class="text-center">ДО</h2>
           <img src="{{ object.image_before.url }}" alt="img" class="img-fluid">
         </div>
       {% endif %}
       {% if object.image_after %}
         <div class="col-6">
+          <h2 class="text-center">ПОСЛЕ</h2>
           <img src="{{ object.image_after.url }}" alt="img" class="img-fluid">
         </div>
       {% endif %}
       {% if object.documents %}
-      <div class="col-12">
+      <div class="col-12 mt-3 mb-2">
         <h4>
           Полезные документы
         </h4>
@@ -50,6 +57,7 @@
           </div>
         {% endfor %}
       {% endif %}
+      
     </div>
   </div>
 </section>

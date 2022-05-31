@@ -25,13 +25,21 @@
       {% endif %}
       {% for object in object_list %}
           <div class="col-4">
-            <div>
+            <div class="card-program mb-3">
               <a href="{% url 'reference:our-projects-detail' pk=object.id %}">
-                <p>
-                  {{object.title}}
-                </p>
-              </a>
-            </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="cont-title mt-3 mb-3">
+                      <p>
+                        {{object.title}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
           </div>
         {% endfor %}
     </div>
