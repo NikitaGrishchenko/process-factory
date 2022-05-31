@@ -7,7 +7,7 @@ from django.views.generic.detail import DetailView
 from program.models import UserEducationalProgram
 
 from .forms import QuestionsFromGuestsForm, UserRegistrationForm
-from .models import Employee
+from .models import Certificate, Employee
 
 User = get_user_model()
 
@@ -69,18 +69,24 @@ class AccountVeiw(TemplateView):
         context = super().get_context_data(**kwargs)
         current_user = self.request.user
         try:
-            user_educational_programs = UserEducationalProgram.objects.filter(user=current_user)
+            user_educational_programs = UserEducationalProgram.objects.filter(user=current_user).order_by('-id')
         except UserEducationalProgram.DoesNotExist:
             user_educational_programs = []
 
         try:
-            user_business_games = UserBusinessGames.objects.filter(user=current_user)
+            user_business_games = UserBusinessGames.objects.filter(user=current_user).order_by('-id')
         except UserBusinessGames.DoesNotExist:
             user_business_games = []
+
+        try:
+            certificates = Certificate.objects.filter(user=current_user).order_by('-id')
+        except Certificate.DoesNotExist:
+            certificates = []
 
         context['user'] = User.objects.get(id=current_user.id)
         context['user_educational_programs'] = user_educational_programs
         context['user_business_games'] = user_business_games
+        context['certificates'] = certificates
         return context
 
 class ThanksView(TemplateView):

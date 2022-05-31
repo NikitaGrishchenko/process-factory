@@ -3,11 +3,18 @@ from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group as BaseGroup
 
-from .models import Employee, ProxyGroup, QuestionsFromGuests, User
+from .models import (Certificate, Employee, ProxyGroup, QuestionsFromGuests,
+                     User)
 
+
+class CertificateInline(admin.TabularInline):
+    model = Certificate
+    extra = 0
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
+
+    inlines = [CertificateInline]
     list_display = (
         "username",
         "email",
