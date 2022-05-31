@@ -309,6 +309,7 @@ select {
 }
 
 .card-program {
+  height: 100%;
   background: rgb(204, 200, 200);
   border-radius: 10px;
   text-align: justify;
@@ -331,12 +332,16 @@ select {
 
 /* Education programm detail */
 
+.card-content{
+ margin: 0 15px 15px 15px;
+}
+
 .title-group_programm{
   color: rgba(141, 141, 141, 0.733);
   font-size: 22px;
   text-align: center;
   font-weight: 700;
-  padding: 15px 10px 25px 10px;
+  padding: 10px 10px;
 }
 
 .programm-desc{
