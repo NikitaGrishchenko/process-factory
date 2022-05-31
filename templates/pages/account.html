@@ -38,8 +38,8 @@
         </div>
       </div>
 
-        {% comment %} {% if user_educational_programs|length > 0 %} {% endcomment %}
-        <div class="card-lc">  
+        {% if certificates|length > 0 %}
+        <div class="card-lc">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <h2 class="lc_subtitle">
               Мои сертификаты
@@ -48,19 +48,19 @@
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
               <div class="activity__title mt-2 mb-1">
-                {% comment %} {% for program in user_educational_programs %} {% endcomment %}
+                {% for item in certificates %}
                 <div class="col-sm-12 col-md-12 col-lg-12 pb-2">
-                  {% comment %} <a href="{% url 'program:detail' pk=program.educational_program.id %}">
-                    {{program.educational_program.title}}
-                  </a> {% endcomment %}
+                  <a href="{{item.file.url}}" target="_blank">
+                    {{item.title}}
+                  </a>
                 </div>
-              {% comment %} {% endfor %} {% endcomment %}
+              {% endfor %}
               </div>
             </div>
           </div>
         </div>
-        {% comment %} {% endif %} {% endcomment %}
-      
+        {% endif %}
+
 
 
       {% if user_educational_programs|length > 0 %}
@@ -84,7 +84,7 @@
             </div>
           </div>
         </div>
-          
+
         {% endif %}
 
 
@@ -113,8 +113,8 @@
           </div>
         </div>
         {% endif %}
-        
-      
+
+
     </div>
   </section>
 {% endblock content %}

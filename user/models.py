@@ -114,3 +114,25 @@ class QuestionsFromGuests(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Certificate(models.Model):
+    """
+    Сертификат пользователя
+    """
+
+    title = models.CharField(max_length=255, verbose_name=_("Название"))
+    file = models.FileField(_("Документ"), upload_to='certificate/', max_length=100)
+    user = models.ForeignKey(
+        User,
+        related_name='certificates',
+        verbose_name=_("Пользователь"),
+        on_delete=models.CASCADE,
+    )
+
+    class Meta:
+        verbose_name = _("Сертификат")
+        verbose_name_plural = _("Сертификат")
+
+    def __str__(self):
+        return self.title
