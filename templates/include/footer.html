@@ -13,7 +13,7 @@
           <p class="footer__title">Полезные ссылки</p>
           <ul class="list__links">
             <li><a href="{% url 'reference:sites' %}">Сайты</a></li>
-            <li><a href="#">Лекции</a></li>
+            <li><a href="{% url 'release:list' %}">Лекции</a></li>
             <li><a href="{% url 'reference:quality-library' %}">Библиотека качества</a></li>
             <li><a href="{% url 'reference:useful-materials' %}">Полезные материалы</a></li>
           </ul>
@@ -24,7 +24,7 @@
           <p class="footer__title">Мы ждем Вас</p>
           <ul class="list__links">
             <li><a href="{% url 'user:feedback' %}">Задать вопрос</a></li>
-            <li><a href="#">Записаться на мероприятие</a></li>
+            <li><a href="/#activity">Записаться на мероприятие</a></li>
           </ul>
         </div>
       </div>
