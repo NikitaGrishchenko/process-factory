@@ -72,7 +72,7 @@ class UserEducationalProgram(models.Model):
 
 class FeedbackToEducationalProgram(models.Model):
     """
-    Отзыв к ткани Образовательная программа
+    Отзыв к Образовательная программа
     """
 
     user = models.ForeignKey(User, verbose_name=_("Пользователь"), on_delete=models.CASCADE)

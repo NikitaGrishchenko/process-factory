@@ -3,27 +3,28 @@
     <div class="row">
       <div class="col-12">
         <h1 class="title">
-          Наши активности
+          Наши мероприятия
         </h1>
       </div>
 
-        <div class="col-sm-12 col-md 6 col-lg-4">
-          <div class="container">
-            <div class="row d-dlex justify-content-center">
-              <div class="cont-activity">
-                <a href="{% url 'release:list' %}">
-                  <div class="img-activity">
-                    <img src="/static/images/ТемВыпуски.jpg" alt="Тематические выпуски">
-                  </div>
-                  <div class="title-activity">
-                    <a href="{% url 'release:list' %}">
-                      Тематические<br> выпуски</a>
-                  </div>
-                </a>
-              </div>
+      <div class="col-sm-12 col-md 6 col-lg-4">
+        <div class="container">
+          <div class="row d-dlex justify-content-center">
+            <div class="cont-activity">
+              <a href="{% url 'program:list' %}">
+                <div class="img-activity">
+                  <img src="/static/images/obrprogram.jpg" alt="Образовательные программы">
+                </div>
+                <div class="title-activity">
+                  <a href="{% url 'program:list' %}">Образовательные<br>программы</a>
+                </div>
+              </a>
             </div>
           </div>
         </div>
+        
+      </div>
+        
         <div class="col-sm-12 col-md 6 col-lg-4">
           <div class="container">
             <div class="row d-dlex justify-content-center">
@@ -45,19 +46,20 @@
           <div class="container">
             <div class="row d-dlex justify-content-center">
               <div class="cont-activity">
-                <a href="{% url 'program:list' %}">
+                <a href="{% url 'release:list' %}">
                   <div class="img-activity">
-                    <img src="/static/images/obrprogram.jpg" alt="Образовательные программы">
+                    <img src="/static/images/ТемВыпуски.jpg" alt="Тематические выпуски">
                   </div>
                   <div class="title-activity">
-                    <a href="{% url 'program:list' %}">Образовательные<br>программы</a>
+                    <a href="{% url 'release:list' %}">
+                      Тематические<br> выпуски</a>
                   </div>
                 </a>
               </div>
             </div>
           </div>
-          
         </div>
+        
 
 
     </div>
